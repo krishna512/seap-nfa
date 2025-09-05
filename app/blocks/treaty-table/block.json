@@ -1,0 +1,25 @@
+{
+  "name": "acf/treatyaccesstable",
+  "title": "Comparision Table",
+  "description": "Comparision Table section",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "none" 
+    }
+  },
+  "style": "block",
+  "script": "block",
+  "category": "page",
+  "icon": "",
+  "keywords": [
+    "treaty",
+    "table",
+    "comparision",
+    "Comparision table"
+  ],
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "block.php"
+  }
+}

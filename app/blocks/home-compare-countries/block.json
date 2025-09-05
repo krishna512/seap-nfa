@@ -1,0 +1,24 @@
+{
+  "name": "acf/compare-countries",
+  "title": "Compare countries",
+  "description": "Compare countries section for homepage",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "style": "block",
+  "script": "block",
+  "category": "home",
+  "icon": "",
+  "keywords": [
+    "compare-countries",
+    "compare",
+    "countries"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  }
+}

@@ -1,0 +1,46 @@
+.single-stakeholder {
+  .social-media-link a {
+    position: relative;
+
+    &.facebook,
+    &.x,
+    &.linkedin,
+    &.instagram,
+    &.youtube {
+      display: flex;
+      width: rem(20);
+      height: rem(20);
+    }
+
+    &.facebook {
+      background: url('../../assets/icons/facebook.svg') no-repeat;
+    }
+
+    &.x {
+      background: url('../../assets/icons/twitter.svg') no-repeat;
+    }
+
+    &.facebook {
+      background: url('../../assets/icons/facebook.svg') no-repeat;
+    }
+    &.instagram {
+      background: url('../../assets/icons/instagram.svg') no-repeat;
+    }
+    &.youtube {
+      background: url('../../assets/icons/youtube.svg') no-repeat;
+    }
+    &.linkedin {
+      background: url('../../assets/icons/linkedin.svg') no-repeat;
+    }
+  }
+}
+
+.stakeholder-about {
+  ul {
+    list-style: unset;
+  }
+  ul,
+  ol {
+    padding-left: 18px;
+  }
+}

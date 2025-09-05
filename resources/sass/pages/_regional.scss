@@ -1,0 +1,184 @@
+.secondary-menu_region {
+  .item {
+    display: inline-flex;
+    justify-content: center;
+    a {
+      display: flex;
+      padding: 16px 24px;
+
+      @media (max-width: 768px) {
+        padding: 16px 16px;
+      }
+
+      @media (max-width: 480px) {
+        padding: 16px 12px;
+      }
+    }
+
+    &.active,
+    &:hover {
+      a {
+        text-shadow: 0.6px 0 0 currentColor;
+        box-shadow: inset 0 -2px 0 0 var(--b-40);
+      }
+    }
+  }
+}
+// .menu-region-tab {
+//   backdrop-filter: blur(2px);
+// }
+
+.title-with-image {
+  .title-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: linear-gradient(180deg, rgba(48, 57, 120, 0.259) 0%, rgba(48, 57, 120, 0.7) 58.4%);
+      width: 100%;
+      inset: 0;
+      height: 100%;
+      z-index: 5;
+    }
+
+    img {
+      filter: grayscale(1);
+    }
+  }
+  .main-title {
+    position: relative;
+    color: var(--n-0);
+    z-index: 10;
+    text-align: center;
+    padding-block: 108px;
+
+    .bottom-line {
+      border-bottom: 5px solid;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.single-content {
+  h2.wp-block-heading {
+    font-size: rem(30);
+    font-weight: 700;
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  h3.wp-block-heading {
+    @apply title-small mt-6;
+  }
+
+  h4.wp-block-heading {
+    font-size: 18px;
+  }
+
+  h5.wp-block-heading {
+    font-size: 16px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-b-40;
+  }
+
+  p {
+    @apply sm:text-lg text-n-40 leading-[2];
+  }
+}
+
+.single-content-container {
+  @apply mx-auto max-w-[842px] px-4;
+}
+
+.treaty-table {
+  .title {
+    @apply text-center text-xs font-bold text-n-30 mb-[14px];
+  }
+}
+
+.stakeholders-content {
+  @apply grid sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4  gap-6 md:gap-[42px];
+}
+
+// Sub-region content
+
+.sub-region-content .countries {
+  @apply sm:grid sm:grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-2;
+}
+
+// label layout
+.label-information {
+  display: grid;
+  column-gap: 16px;
+  row-gap: 8px;
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .each-information {
+    display: flex;
+    font-size: rem(12);
+    line-height: 1.67;
+    color: var(--n-40);
+    gap: 4px;
+    align-items: start;
+
+    img {
+      position: relative;
+      top: rem(3.6);
+      width: rem(14);
+    }
+  }
+}
+
+.desciption p {
+  font-size: rem(14);
+  line-height: 1.67;
+  color: var(--n-40);
+}
+
+// .secondary-menu_region .menu-region-tab {
+//   mask: url('../../assets/images/mask-statelessness.svg') no-repeat;
+//   mask-position: center;
+//   padding-top: 22px;
+//   mask-size: cover;
+// }
+
+.single-region-tab,
+.digital-region-tab {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 14px;
+    top: -14px;
+    left: 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 0 0 var(--n-0);
+  }
+}
+
+.single-region-tab:before {
+  background-image: url(../../assets/images/digital-mask.svg);
+}
+
+.digital-region-tab:before {
+  background-image: url(../../assets/images/statelessness-mask.svg);
+}

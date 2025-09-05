@@ -1,0 +1,56 @@
+// http://localhost:3000 is serving Vite on development
+// but accessing it directly will be empty
+
+import { defineConfig, loadEnv } from 'vite';
+
+import liveReload from 'vite-plugin-live-reload';
+
+import path from 'path';
+
+const { resolve } = require('path');
+
+const fs = require('fs');
+
+export default defineConfig(({ command, mode }) => {
+  const isServeCommand = command === 'serve';
+  return {
+    plugins: [liveReload([resolve(__dirname, 'src/**/**/*.scss'), resolve(__dirname, '**/*.php', './footer.php')])],
+    root: '',
+    base: process.env.NODE_ENV === 'development' ? '/' : '/dist/',
+    cssCodeSplit: true,
+    build: {
+      outDir: resolve(__dirname, './dist'),
+      // assetsInlineLimit: 999999,
+      emptyOutDir: false,
+      manifest: false,
+      target: 'es2018',
+      minify: true,
+      write: true,
+      cssCodeSplit: true,
+      rollupOptions: {
+        input: {
+          app: resolve(__dirname, 'src/app.js'),
+        },
+        output: {
+          entryFileNames: `[name].min.js`,
+          assetFileNames: `[name].min.[ext]`,
+        },
+      },
+    },
+    resolve: {
+      alias: {
+        // '@': path.resolve(__dirname, './wp-content/themes/seap'),
+        '@': resolve(__dirname, isServeCommand ? './wp-content/themes/seap/' : './'),
+      },
+    },
+    server: {
+      port: 2222,
+      strictPort: true,
+      cors: true,
+      https: false,
+      hmr: {
+        host: 'localhost',
+      },
+    },
+  };
+});

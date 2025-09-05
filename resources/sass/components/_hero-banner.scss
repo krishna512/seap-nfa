@@ -1,0 +1,284 @@
+.hero-section {
+  // &__content {
+  //   @media (min-width: (640px)) {
+  //     margin-left: calc(50% - 290px);
+  //   }
+  // }
+
+  .hero-banner-wrapper {
+    @media (min-width: 1024px) {
+      min-height: calc(100vh - 78px);
+    }
+
+    @media (min-width: 1920px) {
+      min-height: calc(85vh - 80px);
+    }
+  }
+
+  .mask {
+    // -webkit-mask-image: url(@/assets/images/map.svg);
+    -webkit-mask-position: top left;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    @apply relative pt-[100%] w-full h-full overflow-hidden mix-blend-multiply;
+
+    //
+
+    //pt-[100%]
+
+    &:after {
+      content: '';
+      // background: url(@/assets/images/map-outline.svg);
+      @apply h-full w-full inset-0 absolute bg-cover z-10;
+    }
+
+    &:before {
+      content: '';
+      background: linear-gradient(180deg, rgba(242, 233, 222, 0) 74.11%, #f2e9de 94.7%, #f2e9de 94.7%);
+      @apply h-full w-full absolute inset-0 z-20;
+    }
+
+    img {
+      @apply h-full inset-0 object-cover absolute w-full;
+    }
+
+    .boy-img {
+      @apply z-10 -left-8;
+      transform-style: preserve-3d;
+      transition-timing-function: ease;
+
+      &:nth-child(1) {
+        @apply h-[95%] w-[95%] opacity-30 grayscale-[25%];
+      }
+
+      &:nth-child(2) {
+        @apply h-[98%] w-[98%] opacity-50 blur;
+      }
+    }
+
+    .seap-bg {
+      animation: heroMapBg 75s linear infinite;
+    }
+  }
+}
+
+// dropdown download button
+
+.download-wrapper.active {
+  .download-btn-toggle svg {
+    rotate: 180deg;
+    transform-origin: center;
+  }
+}
+
+.download-btn-toggle svg {
+  transition: all 0.3s ease;
+}
+
+.download-content {
+  box-shadow: 0px -4px 8px 0px #00000014;
+  top: calc(100% + rem(8));
+  bottom: unset;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.upward-dropdown {
+    top: unset;
+    bottom: calc(100% + rem(8));
+  }
+}
+
+// regional Hero Banner
+.page-hero-banner,
+.single_hero-banner {
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 8, 67, 0.9) 0%, rgba(48, 57, 120, 0.9) 100%);
+    z-index: 5;
+  }
+  // breadCrumb
+  .breadcrumb {
+    color: var(--n-20);
+
+    .breadcrumb-item {
+      &:last-child {
+        color: var(--n-0);
+      }
+
+      &:nth-last-child(2) a {
+        &:after {
+          color: var(--n-0);
+        }
+      }
+    }
+  }
+}
+
+// Sub-region Overlay
+@media (min-width: 768px) {
+  .sub-region-hero {
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      z-index: 20;
+      background: linear-gradient(
+        134.86deg,
+        rgba(55, 59, 101, 0) 36.82%,
+        rgba(27, 33, 85, 0.442) 48.52%,
+        rgba(2, 11, 72, 0.5695) 69.19%
+      );
+    }
+  }
+}
+
+.sub-region .hero-left-content .countries a {
+  align-items: start;
+  .country-flag {
+    position: relative;
+    top: 6px;
+  }
+}
+
+.popup-wrapper {
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &.show {
+      .popup-modal {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+  .popup-modal {
+    @media (max-width: 768px) {
+      transition: all 0.3s ease;
+      background: var(--n-0);
+      color: var(--n-60);
+      border-radius: 4px;
+      max-width: 80%;
+      margin-inline: auto;
+
+      .modal-content-wrapper {
+        max-height: 40vh;
+        overflow-y: auto;
+        padding-right: 12px;
+        // scrollbar-color: var(--b-40) var(--b-0);
+
+        &::-webkit-scrollbar {
+          width: 4px;
+          border-radius: 4px;
+          background: var(--b-0);
+          margin-left: 12px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: var(--b-40);
+          border-radius: 4px;
+        }
+
+        .countries .item a {
+          color: var(--n-50);
+          padding-block: 12px;
+          display: flex;
+          border-bottom: 1px solid var(--n-10);
+        }
+      }
+    }
+  }
+
+  #pop-up__overlay {
+    background: rgba(37, 37, 37, 0.6);
+    transition: all 0.3s ease;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+// compare breadcrumb
+
+.compare-countries {
+  .breadcrumb-item {
+    color: var(--b-40);
+
+    &:last-child {
+      color: var(--n-20);
+    }
+
+    &:nth-last-child(2) a:after {
+      color: var(--n-20);
+    }
+  }
+}
+
+// For all breadcrumb
+
+.breadcrumb {
+  position: relative;
+  z-index: 10;
+  font-size: 14px;
+  line-height: 1.57;
+  ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  .breadcrumb-item {
+    a {
+      &:after {
+        content: '';
+        display: inline-block;
+        height: 4px;
+        width: 4px;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin: 0 6px 2px 1px;
+        position: relative;
+      }
+    }
+
+    &:nth-last-child(2) a {
+      &:after {
+        border-top: 1.9px solid;
+        border-right: 1.9px solid;
+      }
+    }
+
+    &:last-child {
+      font-weight: 700;
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.bottom-lines {
+  display: block;
+  width: 100%;
+  height: 5px;
+}
+
+// Page-hero section

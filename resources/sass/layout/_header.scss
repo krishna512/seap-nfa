@@ -1,0 +1,751 @@
+.header {
+  @apply fixed left-0 right-0 z-[50];
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    background: var(--b-40);
+    &.is-hidden {
+      transform: translateY(-100%);
+    }
+
+    // change the color of logo //
+    .header-logo {
+      filter: invert(1) grayscale(1) contrast(9);
+    }
+
+    .navbar-menu,
+    .search__icon {
+      color: #fff;
+    }
+
+    .secondary_menu--nav-menu > li.menu-item.menu-item-has-children > a:before {
+      border-top-color: #fff;
+    }
+
+    // hamburger-menu when scrolled down
+    .hamburger-toggle {
+      span {
+        background: var(--white);
+      }
+      &.open {
+        span {
+          background: var(--b-40);
+        }
+      }
+    }
+
+    .hamburger-menu.active {
+      & + .header-content {
+        .header-logo {
+          filter: none;
+        }
+
+        & + .search .search__icon {
+          color: var(--b-40);
+        }
+      }
+    }
+
+    /// End hamburger-menu when scrolled down
+  }
+}
+
+.page:not(.home, .page-template-compare-countries),
+.single-region,
+.post-type-archive,
+.single-news,
+.single {
+  .header {
+    // change the color of logo
+
+    .header-logo {
+      filter: invert(1) grayscale(1) contrast(9);
+    }
+
+    .navbar-menu,
+    .search__icon {
+      color: #fff;
+    }
+
+    .secondary_menu--nav-menu > li.menu-item.menu-item-has-children > a:before {
+      border-top-color: #fff;
+    }
+
+    // hamburger-menu when scrolled down
+    .hamburger-toggle {
+      span {
+        background: var(--white);
+      }
+      &.open span {
+        background: var(--b-40);
+      }
+    }
+    /// End hamburger-menu when scrolled down
+    .hamburger-menu.active {
+      & + .header-content {
+        .header-logo {
+          filter: none;
+        }
+
+        & + .search .search__icon {
+          color: var(--b-40);
+        }
+      }
+    }
+  }
+}
+
+// for changing header background to white
+.header {
+  &:has(.seap-menu.has-child) {
+    background: var(--n-0);
+    transition: all 0.5s ease;
+
+    .header-logo {
+      filter: unset;
+    }
+
+    .navbar-menu,
+    .search__icon {
+      color: inherit;
+    }
+  }
+}
+
+// .digital-id {
+//   display: none;
+// }
+
+// .seap-report {
+//   display: none;
+// }
+
+.single-news {
+  .header {
+    background: var(--b-40);
+  }
+}
+
+.nav-menu-item.active .line {
+  @apply opacity-100;
+}
+
+.navbar-menu li {
+  @apply transition-all duration-300;
+
+  .seap-child-menu {
+    @apply absolute hidden w-full bg-white top-full left-0 right-0 pt-8 pb-[76px];
+    // hidden
+    transition: al 0.3s ease;
+  }
+
+  // .sub-menu {
+  //   // @apply absolute bg-white top-full invisible opacity-0 left-0 right-auto rounded w-max z-50 overflow-hidden;
+
+  //   p,
+  //   li.menu-item,
+  //   .countries .item {
+  //     @apply text-black text-xs m-0  border-[#EFEFEF]  border-solid border-0 border-b;
+
+  //     a {
+  //       @apply flex py-2.5 px-4  transition-all duration-300 hover:bg-[#EFEFEF];
+  //     }
+  //   }
+  // }
+
+  .navbar-menu--submenu.right-aligned {
+    right: -100%;
+    left: auto;
+  }
+
+  // &:hover {
+  //   .sub-menu {
+  //     animation: showMenu 0.5s ease-in-out forwards;
+  //   }
+  // }
+}
+
+// .seap-menu > .seap-menu-list {
+//   &:hover {
+//     .seap-child-menu {
+//       opacity: 1;
+//       visibility: visible;
+//     }
+//   }
+// }
+
+// menu with no children and background is dark blue
+body:not(.home, .error404, .search-results, .page-template-compare-countries) {
+  .seap-menu > .nav-menu-item {
+    &:not(:has(.seap-child-menu)) > a:before {
+      background: var(--n-0);
+    }
+    // &:not(& > .seap-child-menu) > a::before {
+    //   background: var(--n-0);
+    // }
+  }
+}
+
+// End menu with no children and background is dark blue
+
+.seap-menu > .nav-menu-item {
+  & > a {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background: var(--n-40);
+      transition: all 0.3s ease;
+      left: 0;
+      bottom: -1px;
+    }
+  }
+  &.hover-active,
+  &:hover {
+    a {
+      text-shadow: 0.4px 0 0 currentColor;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.seap-child-left {
+  @apply pr-10 max-w-[215px] w-full shrink-0;
+
+  .nav-menu-item {
+    &:hover,
+    &.open {
+      a {
+        text-shadow: 0.6px 0 0 currentColor;
+      }
+      .line {
+        @apply opacity-100;
+      }
+    }
+  }
+}
+
+.indicator {
+  box-shadow: 1px 0px;
+  right: 0;
+  transition: top 0.22s ease;
+}
+
+.seap-child-right {
+  flex: 1;
+  padding-left: rem(32);
+  .nav-menu-item {
+    // position: absolute;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    // width: calc(100% - 32px);
+
+    &.open {
+      visibility: visible;
+      display: block;
+
+      opacity: 1;
+    }
+    .navbar-menu--submenu {
+      display: flex;
+      // gap: rem(88);
+      gap: clamp(rem(24), 5vw, rem(48));
+
+      @media (min-width: 1440px) {
+        gap: rem(88);
+      }
+
+      // .column:not(:last-child) {
+      //   margin-right: clamp(rem(24), 5vw, rem(54));
+
+      //   @media (min-width: 1440px) {
+      //     margin-right: rem(88);
+      //   }
+      // }
+    }
+  }
+
+  p {
+    @apply pb-4 text-sm leading-[1.6] text-n-50;
+  }
+
+  .column.countries {
+    .country-flag {
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--n-10);
+    }
+
+    .link-hover-border {
+      &:after {
+        bottom: -3px;
+        // bottom: 7px;
+      }
+      // &:hover:after {
+      //   width: 100%;
+      // }
+    }
+
+    .countries-item {
+      &:hover {
+        .link-hover-border:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.link-hover-border {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--n-50);
+    transition: all 0.3s ease;
+    transform: scaleY(0.6); /* This visually thickens the line */
+    transform-origin: bottom;
+  }
+}
+
+// For nav listing dropdown
+
+.line-bottom {
+  transform-origin: bottom;
+  transform: scaleY(0.6);
+}
+
+.seap-child-right .submenu-countries {
+  display: flex;
+  gap: rem(32);
+
+  @media (min-width: 1200px) {
+    gap: clamp(rem(24), 5vw, rem(48));
+  }
+
+  @media (min-width: 1440px) {
+    gap: rem(88);
+  }
+}
+
+.submenu-countries .countries {
+  min-width: 143px;
+
+  .item {
+    @apply flex;
+
+    &:not(:first-child) {
+      a {
+        padding-top: 8px;
+      }
+    }
+  }
+
+  .country-flag {
+    @apply top-[4px];
+  }
+}
+
+.seap-child-right .sub-menu__content {
+  flex-shrink: 0;
+}
+.seap-child-right .sub-menu__content a {
+  display: inline-flex;
+  gap: rem(8);
+
+  .icon {
+    position: relative;
+    top: 2px;
+    font-size: rem(16);
+    width: rem(16);
+    display: flex;
+  }
+
+  &:hover {
+    .link-hover-border:after {
+      width: 100%;
+    }
+  }
+}
+
+// Introduction section
+
+.nav-introduction-img::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.57) 100%);
+}
+
+.seap-child-right .menu-subtitle {
+  @apply text-xs leading-[1.6] text-n-30 pb-4;
+}
+
+// secordary-menu
+.secondary_menu {
+  &--nav-menu {
+    .sub-menu {
+      @apply absolute bg-n-0 top-full text-n-60 invisible opacity-0 left-0 right-auto rounded w-max z-50 overflow-hidden divide-y divide-[#EFEFEF];
+    }
+
+    & > li.menu-item {
+      @apply pb-3 text-xs relative;
+
+      &:hover {
+        .sub-menu {
+          animation: showMenu 0.5s ease-in-out forwards;
+        }
+      }
+      .menu-item > a {
+        @apply py-[10px] px-4 block transition-all duration-300 hover:bg-[#EFEFEF];
+      }
+
+      &.menu-item-has-children {
+        & > a {
+          @apply pr-2 relative;
+
+          &:before {
+            content: '';
+            position: absolute;
+            right: 0;
+
+            top: 50%;
+            border-top: 3.5px solid var(--caption);
+            border-left: 3.5px solid transparent;
+            border-right: 3.5px solid transparent;
+            transition: 0.2s linear;
+          }
+        }
+
+        &:hover {
+          & > a:before {
+            rotate: -180deg;
+          }
+        }
+      }
+    }
+  }
+}
+
+ul.nav-menu li {
+  @apply pb-3;
+
+  // &:before {
+  //   content: '';
+  //   @apply absolute w-full bottom-2 h-0.5 opacity-40 transition-all duration-300;
+  // }
+
+  // &:hover:before {
+  //   @apply opacity-100;
+  // }
+
+  .sub-menu {
+    // @apply absolute bg-white top-full invisible opacity-0 left-0 flex rounded w-max z-50;
+    @apply flex;
+    // div:last-child {
+    //   // @apply border-solid border-0 border-l border-[#EFEFEF];
+    //   // p {
+    //   //   @apply flex items-center gap-x-2;
+    //   // }
+    // }
+
+    .countries a {
+      @apply text-black;
+    }
+
+    // p {
+    //   @apply py-2.5 px-4 border-solid border-0 border-b border-[#EFEFEF] text-black m-0 transition-all duration-300 hover:bg-[#EFEFEF];
+    // }
+  }
+
+  // &:hover {
+  //   .sub-menu {
+  //     animation: showMenu 0.5s ease-in-out forwards;
+  //   }
+  // }
+}
+
+// search Modal
+
+.search {
+  &__form--wrapper {
+    &:before {
+      content: '';
+      background: url('../../assets/icons/search.svg') no-repeat;
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      opacity: 0.5;
+    }
+  }
+}
+
+.search__modal,
+#search__overlay {
+  @apply fixed opacity-0 top-0 left-0  invisible w-full h-full z-50;
+  transition: 0.4s linear;
+  transform: translateY(-100%);
+}
+
+.search__modal.open-search-modal,
+#search__overlay.open-search-modal {
+  @apply visible opacity-100;
+  transform: translateY(0);
+}
+
+#search__overlay {
+  background: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+// Hamburger Toggle
+
+.hamburger-toggle {
+  scale: 1;
+  transition: all 0.3s ease;
+  span {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &.open {
+    scale: 0.85;
+    span {
+      &:nth-child(1) {
+        // @apply rotate-45 translate-y-2;
+        transform: translateY(0.5rem) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        width: 0;
+      }
+
+      &:nth-child(3) {
+        // @apply -rotate-45 -translate-y-2;
+        transform: translateY(-0.5rem) rotate(-45deg);
+      }
+    }
+  }
+}
+
+// End of Hamburger Toggle
+
+// HamBurger-Menu
+
+body.admin-bar .hamburger-menu-wrap {
+  @apply top-[115px];
+}
+
+.hamburger-menu__wrapper .menu-item-has-children,
+.hamburger-main-title .menu-item-has-children:has(.seap-child-hamburger-menu) > .nav-title-wrapper {
+  @apply relative cursor-pointer;
+
+  &::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    border-color: inherit;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    width: 6px;
+    height: 6px;
+    right: 5px;
+    top: 16px;
+    border-color: var(--n-40);
+    transform: rotate(45deg);
+    transition: 0.2s ease;
+    transform-origin: 50% 50%;
+  }
+
+  &.active {
+    &::after {
+      transform: rotate(225deg);
+      transform-origin: 59% 71%;
+    }
+  }
+}
+
+// Subtitle
+.hamburger-menu__sub-menu .menu-subtitle {
+  @apply mt-2 mb-1 text-[10px] leading-[1.6] text-n-30 flex items-center gap-4;
+
+  &:after {
+    content: '';
+    flex: 1;
+    height: 0.2px;
+    background: var(--n-20);
+    opacity: 0.5;
+  }
+}
+
+.secondary-hamburger .menu-item-has-children::after {
+  border-color: var(--n-40);
+}
+
+.hamburger-menu__sub-menu p:not(.menu-subtitle) {
+  @apply text-xs leading-[1.6] text-n-40;
+}
+
+.hamburger-menu__wrapper > li > a,
+.hamburger-main-title .nav-title-wrapper > a {
+  @apply py-2 block mr-10;
+}
+
+.hamburger-menu__sub-menu,
+.hamburger-menu__wrapper .sub-menu,
+.hamburger-main-title > .hamburger-menu__item > .seap-child-hamburger-menu {
+  display: none;
+}
+
+#hamburger-overlay {
+  display: none;
+}
+
+.hamburger-menu {
+  visibility: hidden;
+  position: relative;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 60;
+  position: fixed;
+  inset: 0;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    background: var(--bg);
+  }
+
+  &__sub-menu,
+  &__wrapper .sub-menu {
+    display: none;
+  }
+  // Hamburger-menu Wrapper
+
+  // &__wrapper {
+  // & > li > a {
+  //   @apply py-2 block mr-10;
+  // }
+
+  // .menu-item-has-children {
+  //   @apply relative cursor-pointer;
+  //   &::after {
+  //     content: '';
+  //     pointer-events: none;
+  //     position: absolute;
+  //     border-color: inherit;
+  //     border-width: 0 2px 2px 0;
+  //     border-style: solid;
+  //     width: 6px;
+  //     height: 6px;
+  //     right: 5px;
+  //     top: 19px;
+  //     transform: rotate(45deg);
+  //     transition: 0.2s ease;
+  //     transform-origin: 50% 50%;
+  //   }
+
+  //   // &:hover,
+  //   &.active {
+  //     &::after {
+  //       transform: rotate(225deg);
+  //       transform-origin: 59% 71%;
+  //     }
+  //   }
+  // }
+  // }
+
+  &__sub-menu .submenu-countries {
+    // @apply divide-y divide-n-10 space-y-1;
+    @apply mt-2;
+  }
+
+  &__sub-menu,
+  .secondary-hamburger .sub-menu {
+    @apply px-2 paragraph-small text-n-40;
+
+    & > div p > a {
+      @apply font-medium;
+    }
+
+    & > div p > a,
+    & > li > a {
+      @apply py-2 block;
+    }
+
+    .countries {
+      @apply grid gap-x-8 grid-cols-2;
+      // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      a {
+        @apply py-[10px] px-0;
+      }
+      .country-name {
+        @apply text-xs text-n-50;
+      }
+    }
+  }
+  .secondary-hamburger {
+    & > li > a {
+      @apply font-semibold;
+    }
+
+    .sub-menu {
+      @apply divide-y divide-n-10;
+    }
+  }
+
+  // Gap for sub-menu
+  &__sub-menu .sub-menu__content p > a {
+    @apply flex gap-x-1 items-center;
+
+    .icon {
+      @apply w-4 flex text-sm leading-[0];
+    }
+  }
+
+  &__sub-menu .menu-overview .icon {
+    @apply text-xs leading-[0];
+  }
+}
+
+@media (min-width: 640px) {
+  #hamburger-overlay {
+    display: block;
+    z-index: 85;
+    background: #1e1a3166;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &.hamburger-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .hamburger-menu {
+    max-width: rem(340);
+    z-index: 90;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}

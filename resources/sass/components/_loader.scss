@@ -1,0 +1,44 @@
+// For compare Countries
+.compare-result.filter-area-loading {
+  display: none;
+}
+
+// End  compare Countries
+
+.loader:has(+ .filter-area-loading) {
+  display: flex;
+}
+.loader {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar {
+  display: inline-block;
+  width: 4px;
+  height: 24px;
+  background: var(--n-40);
+  animation: scale-up 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 35px;
+  margin: 0 5px;
+  animation-delay: 0.25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes scale-up {
+  20% {
+    background-color: #141414;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
+  }
+}

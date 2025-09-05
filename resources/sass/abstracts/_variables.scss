@@ -1,0 +1,40 @@
+:root {
+  --black: theme(colors.black);
+  --white: theme(colors.white);
+  --transparent: theme(colors.transparent);
+  --current: theme(colors.current);
+
+  // For left Variable
+  --arrow-left: 18px;
+
+  // Ocean Blue
+
+  --b-0: theme(colors.b-0);
+  --b-10: theme(colors.b-10);
+  --b-20: theme(colors.b-20);
+  --b-30: theme(colors.b-30);
+  --b-40: theme(colors.b-40);
+  --b-50: theme(colors.b-50);
+  --b-60: theme(colors.b-60);
+
+  // Neutrals
+  --n-0: theme(colors.n-0);
+  --n-10: theme(colors.n-10);
+  --n-20: theme(colors.n-20);
+  --n-30: theme(colors.n-30);
+  --n-40: theme(colors.n-40);
+  --n-50: theme(colors.n-50);
+  --n-60: theme(colors.n-60);
+
+  --bg: theme(colors.bg);
+  --orange: theme(colors.orange);
+  --red: theme(colors.red);
+  --yellow: theme(colors.yellow);
+  --blue: theme(colors.blue);
+  --purple: theme(colors.purple);
+  --violet: theme(colors.violet);
+  --green: theme(colors.green);
+  --default: theme(colors.default);
+  --caption: theme(colors.caption);
+  --excerpt: theme(colors.excerpt);
+}

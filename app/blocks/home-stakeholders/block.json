@@ -1,0 +1,35 @@
+{
+  "name": "seap/stakeholders",
+  "title": "Stakeholders Carousel",
+  "description": "stakeholders section for homepage",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "supports": {
+    "align": ["full"],
+    "anchor": true,
+    "className": true,
+    "mode": false
+  },
+  "example": {
+    "attributes": {
+      "align": {
+        "type": "string",
+        "default": "full"
+      }
+    }
+  },
+  "editorScript": ["swiper-bundle", "home-stakeholders-editor"],
+  "style": ["swiper-bundle", "home-stakeholders"],
+  "viewScript": ["swiper-bundle", "home-stakeholders-front"],
+  "category": "home",
+  "icon": "",
+  "keywords": ["stakeholders"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "template.php"
+  }
+}

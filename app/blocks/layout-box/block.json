@@ -1,0 +1,41 @@
+{
+  "name": "seap/layout-box",
+  "title": "Layout Box",
+  "description": "Layout Box",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
+  "supports": {
+    "align": [
+      "wide", "full"
+    ],
+    "anchor": false,
+    "className": true,
+    "mode": false
+  },
+  "example": {
+    "attributes": {
+      "align": {
+        "type": "string",
+        "default": "none"
+      }
+    }
+  },
+  "viewScript": [],
+  "editorScript": [],
+  "editorStyle": [],
+  "category": "seap",
+  "icon": "",
+  "keywords": [
+    "columns",
+    "box",
+    "section"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "template.php"
+  }
+}

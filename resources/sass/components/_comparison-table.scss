@@ -1,0 +1,205 @@
+.comparision-table,
+figure.wp-block-table {
+  margin-top: 24px;
+
+  .comparison-info,
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    tr {
+      font-size: 12px;
+      line-height: 1.67;
+    }
+
+    thead {
+      border: 1px solid var(--b-50);
+
+      & > tr {
+        color: var(--white);
+        background: var(--b-50);
+
+        th {
+          padding: 10px 12px;
+          width: 11.11%;
+          border: 0;
+        }
+      }
+    }
+
+    &__data,
+    tbody {
+      tr {
+        border-bottom: 1px solid var(--n-20);
+
+        & > td {
+          padding: 10px;
+          border-inline: 1px solid var(--n-20);
+          border-bottom: inherit;
+        }
+      }
+    }
+  }
+
+  & + .wp-block-columns {
+    gap: 0.5rem;
+    justify-content: space-between;
+
+    @media (min-width: 782px) {
+      &:not(.is-not-stacked-on-mobile) > .wp-block-column {
+        flex-basis: auto;
+        flex-grow: initial;
+      }
+    }
+
+    .wp-block-column p {
+      font-size: rem(12) !important;
+      line-height: 2;
+
+      sup,
+      sub {
+        font-size: inherit;
+      }
+    }
+  }
+}
+
+// how to use
+
+.faq-category {
+  ul {
+    &::-webkit-scrollbar {
+      background: var(--white);
+      height: 4px;
+      border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--b-40);
+      border-radius: 8px;
+    }
+
+    & > li {
+      a {
+        box-shadow: 0 1px 0 var(--n-20);
+        color: var(--n-40);
+
+        &:hover,
+        &.active {
+          box-shadow: 0 2px 0 var(--b-40);
+          color: var(--b-40);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.faq-question {
+  &.active {
+    .left-arrow {
+      svg {
+        rotate: 90deg;
+      }
+    }
+  }
+
+  .left-arrow {
+    svg {
+      transition: all 0.6s ease;
+    }
+  }
+}
+
+.faq-content {
+  .each-faq {
+    border-bottom: 1px solid var(--n-20);
+    // display: grid;
+    // gap: 20px;
+
+    .faq-answer {
+      transition: max-height 0.2s ease-out;
+
+      p,
+      ul > li,
+      ol > li {
+        @apply leading-[2];
+      }
+
+      ul,
+      ol {
+        list-style: auto;
+        padding-left: 18px;
+      }
+    }
+  }
+
+  .faq-video {
+    .thumbnail-image {
+      &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(37, 37, 37, 0.4);
+        z-index: 5;
+      }
+    }
+
+    .video-play-btn {
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // #pop-up__overlay {
+  //   position: absolute;
+  //   // top: 0;
+  //   // left: 0;
+  //   z-index: 40;
+  //   inset: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: rgba(19, 19, 19, 0.6);
+  // }
+
+  // .popup-video {
+  //   transform: translateY(-100%);
+  //   transition: all 0.4s ease;
+  //   opacity: 0;
+  //   top: 0;
+  //   left: 0;
+
+  //   &.show {
+  //     visibility: visible;
+  //     transform: translateY(0);
+  //     opacity: 1;
+  //   }
+  // }
+  // .popup-wrapper {
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  // }
+}
+
+.contact-info {
+  .phone-detail,
+  .email-detail {
+    @apply p-6 border rounded border-n-20;
+
+    .icon {
+      @apply text-4xl leading-[0];
+    }
+  }
+}
+
+.wp-block-table figcaption.wp-element-caption {
+  font-size: rem(12);
+  line-height: 1.67;
+  color: var(--n-30);
+  margin-top: rem(8);
+}

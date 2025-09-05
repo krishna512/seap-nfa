@@ -1,0 +1,35 @@
+/** Breakpoint-mixin **/
+$breakpoints: (
+  xs: 480px,
+  xsm: 576px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280,
+  2xl: 1536px,
+);
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+/**
+** Example code for max-width
+**/
+
+.example-header {
+  padding: 20px;
+  font-size: 16px;
+  @include mq('sm', max) {
+    padding-top: 30px;
+    font-size: 22px;
+  }
+}

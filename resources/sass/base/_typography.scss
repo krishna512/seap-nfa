@@ -1,0 +1,123 @@
+// @use '../util' as u;
+
+@use 'sass:math';
+@function rem($pixel) {
+  // if $pixel has a unit, throw an error
+  @if math.is-unitless($pixel) {
+    // divide $pixel by 16 to return rems
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function';
+  }
+}
+
+.display-large,
+.display-medium,
+.display-small {
+  font-family: theme('fontFamily.bricolage_grotesque');
+  line-height: 1;
+  font-weight: 600;
+}
+
+.display-large {
+  font-size: rem(64);
+}
+
+.display-medium {
+  font-size: rem(48);
+}
+
+.display-small {
+  font-size: rem(32);
+}
+
+.title-large {
+  font-size: rem(30);
+  font-weight: 700;
+}
+
+.title-medium {
+  font-size: rem(24);
+  font-weight: 700;
+}
+
+.title-small {
+  font-size: rem(20);
+}
+
+.paragraph-large {
+  font-size: rem(18);
+}
+
+.paragraph-medium {
+  font-size: rem(16);
+}
+
+.paragraph-small {
+  font-size: rem(14);
+}
+
+.label-medium {
+  font-size: rem(16);
+  font-weight: 600;
+}
+
+.label-small {
+  font-size: rem(14);
+  font-weight: 700;
+}
+
+.caption-bold {
+  font-size: rem(12);
+  font-weight: 700;
+}
+
+.caption-regular {
+  font-size: rem(12);
+}
+
+// .label-small,
+// .caption-bold,
+// .caption-regular {
+//   color: #000;
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bricolage_grotesque;
+}
+
+h1 {
+  @apply md:text-h1 leading-[1] text-h2 font-semibold;
+  // md:leading-[1.125]
+}
+
+h2 {
+  @apply text-h3 sm:text-h2 leading-[1.2];
+}
+
+h3 {
+  @apply text-h4 sm:text-h3 leading-[1.2];
+}
+
+h4 {
+  @apply text-h5 sm:text-h4 leading-[1.2];
+}
+
+h5 {
+  @apply text-h6 sm:text-h5 leading-[1.2];
+}
+
+h6 {
+  @apply text-h6;
+}
+
+// @media (max-width: 625px) {
+//   p {
+//     font-size: 14px;
+//   }
+// }

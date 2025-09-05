@@ -1,0 +1,86 @@
+#glossary-search-box,
+#seap_search_box {
+  height: 56px;
+  margin-top: 59px;
+  margin-bottom: 64px;
+  @media (max-width: 640px) {
+    margin-block: 46px;
+  }
+  form {
+    max-width: 812px;
+    margin: auto;
+    display: flex;
+
+    input[type='text'] {
+      height: 56px;
+      width: calc(100% - 75px);
+      background-color: var(--bg);
+
+      border: 1px solid #797983;
+      padding: 16px;
+      border-right: 0px;
+    }
+
+    button[type='submit'] {
+      height: 56px;
+      width: 65px;
+      background-color: var(--b-40);
+      color: white;
+    }
+  }
+}
+
+#filter-area {
+  .search-info {
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+
+  .items.grid {
+    column-gap: 20px;
+    row-gap: 40px;
+  }
+}
+
+.click-to-read {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  transition-duration: 0.3s;
+  transform: translateY(100%);
+  display: flex;
+  align-items: flex-end;
+  color: var(--n-0);
+
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(49, 57, 120, 0.8) 80%, rgba(49, 57, 120, 1) 100%);
+  div {
+    text-align: center;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    svg {
+      transform: rotate(180deg) translateY(10%);
+    }
+  }
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+
+  &:hover .click-to-read {
+    transform: translateY(0);
+  }
+}
+
+.post-country {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  svg {
+    color: var(--b-40);
+  }
+}

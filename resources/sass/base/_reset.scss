@@ -1,0 +1,69 @@
+html {
+  scroll-behavior: smooth;
+  // scroll-snap-type: y mandatory;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 0 solid;
+}
+
+body {
+  @apply text-n-60 bg-bg;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  transition: all 0.4s ease;
+
+  // &:hover {
+  // @apply text-orange;
+  // }
+}
+
+svg {
+  height: 1em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.apexcharts-canvas svg {
+  height: auto;
+}
+
+.container-full {
+  @apply w-full;
+}
+// px-4
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.invert-color {
+  filter: grayscale(1);
+}

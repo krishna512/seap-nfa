@@ -1,0 +1,127 @@
+.search-stakeholder-countries {
+  .select2-selection.select2-selection--single {
+    height: auto;
+  }
+
+  .select2-selection__rendered {
+    padding: 8px;
+  }
+
+  // .select2-selection__arrow {
+  //   height: 36px !important;
+  //   right: 8px !important;
+  // }
+  .selection > .select2-selection.select2-selection--single {
+    padding-left: 8px;
+  }
+}
+.stakeholder-archive {
+  .filter-box {
+    // display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: 24px;
+    margin-top: 59px;
+    margin-bottom: 64px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      flex-direction: column;
+      margin-block: 46px;
+    }
+  }
+}
+
+.stakeholder-archive,
+#report-archive {
+  .filter-box {
+    #seap_search_box {
+      max-width: 100%;
+      width: 100%;
+      // flex-basis: 40%;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      // @media (max-width: 1024px) {
+      //   flex-basis: 49%;
+      // }
+      @media (max-width: 640px) {
+        // flex-basis: 100%;
+        margin-block: 0;
+      }
+
+      form {
+        width: 100%;
+        max-width: 100%;
+
+        input {
+          width: 100%;
+        }
+        button {
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    .search-stakeholder-countries,
+    .search-stakeholder-categories,
+    .search-stakeholder-regions {
+      // @apply sm:basis-[49%] lg:basis-[20%];
+
+      .select2.select2-container {
+        max-width: 100%;
+        width: 100% !important;
+      }
+
+      .select2-selection--single {
+        background: transparent;
+        height: 56px;
+        border-radius: 2px;
+
+        .select2-selection__rendered {
+          display: grid;
+          align-items: center;
+          height: 100%;
+          margin-right: 24px;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// }
+.stakeholders_card {
+  box-shadow: 0px 4px 4px 0px #00000014;
+}
+
+.search-stakeholder-countries,
+.search-stakeholder-categories,
+.search-stakeholder-regions {
+  .select2-container--default .selection .select2-selection--single .select2-selection__arrow {
+    height: auto;
+    bottom: 0;
+    right: 8px;
+
+    > b {
+      border-color: #667085;
+      border-width: 0px 0px 2px 2px;
+      width: 8px;
+      height: 8px;
+      border-radius: 1px;
+      transform: translateY(-50%) rotate(-45deg);
+      transition: all 0.2s ease;
+    }
+  }
+
+  .select2-container--open .selection .select2-selection--single .select2-selection__arrow {
+    b {
+      transform: translateY(-50%) rotate(136deg);
+    }
+  }
+}

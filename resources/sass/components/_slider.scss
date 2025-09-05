@@ -1,0 +1,25 @@
+.swiper-pagination {
+  @media (min-width: 640px) {
+    display: none;
+  }
+}
+
+#stakeholder-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 15px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.carousel-container {
+  overflow-x: hidden;
+}
+
+.carousel-container .swiper-slide {
+  border-radius: 12px 12px 0 0 !important;
+  // min-height: 360px;
+}
+
+.no-link {
+  // cursor: auto;
+  pointer-events: none;
+}

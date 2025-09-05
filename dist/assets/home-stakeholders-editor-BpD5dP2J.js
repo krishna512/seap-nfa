@@ -1,0 +1,1 @@
+jQuery(function(t){window.acf&&window.acf.addAction("render_block_preview/type=seap/stakeholders",e);function e(r){let i=r.find(".stakeholderSwiper")[0];new Swiper(i,{slidesPerView:3,centeredSlides:!1,spaceBetween:24,grabCursor:!0,loop:!0})}});

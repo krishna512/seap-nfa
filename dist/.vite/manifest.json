@@ -1,0 +1,107 @@
+{
+  "app/blocks/bar-chart/bar-chart-editor.js": {
+    "file": "assets/bar-chart-editor-zqzhThyZ.js",
+    "name": "bar-chart-editor",
+    "src": "app/blocks/bar-chart/bar-chart-editor.js",
+    "isEntry": true
+  },
+  "app/blocks/glossary/glossary.js": {
+    "file": "assets/glossary-BHNVFioy.js",
+    "name": "glossary",
+    "src": "app/blocks/glossary/glossary.js",
+    "isEntry": true
+  },
+  "app/blocks/hero-banner/hero-banner-front.js": {
+    "file": "assets/hero-banner-front-BMy1nGqI.js",
+    "name": "hero-banner-front",
+    "src": "app/blocks/hero-banner/hero-banner-front.js",
+    "isEntry": true
+  },
+  "app/blocks/hero-banner/hero-banner.scss": {
+    "file": "assets/hero-banner-BVHWBJ1C.css",
+    "src": "app/blocks/hero-banner/hero-banner.scss",
+    "isEntry": true
+  },
+  "app/blocks/home-stakeholders/home-stakeholders-editor.js": {
+    "file": "assets/home-stakeholders-editor-BpD5dP2J.js",
+    "name": "home-stakeholders-editor",
+    "src": "app/blocks/home-stakeholders/home-stakeholders-editor.js",
+    "isEntry": true
+  },
+  "app/blocks/home-stakeholders/home-stakeholders-front.js": {
+    "file": "assets/home-stakeholders-front-h9zIJzrq.js",
+    "name": "home-stakeholders-front",
+    "src": "app/blocks/home-stakeholders/home-stakeholders-front.js",
+    "isEntry": true
+  },
+  "assets/icons/facebook.svg": {
+    "file": "assets/facebook-CBTtwkGt.svg",
+    "src": "assets/icons/facebook.svg"
+  },
+  "assets/icons/instagram.svg": {
+    "file": "assets/instagram-GNWx9yL6.svg",
+    "src": "assets/icons/instagram.svg"
+  },
+  "assets/icons/linkedin.svg": {
+    "file": "assets/linkedin-BWVzL3_V.svg",
+    "src": "assets/icons/linkedin.svg"
+  },
+  "assets/icons/search.svg": {
+    "file": "assets/search-CZrOhMQI.svg",
+    "src": "assets/icons/search.svg"
+  },
+  "assets/icons/twitter.svg": {
+    "file": "assets/twitter-C3d17iN9.svg",
+    "src": "assets/icons/twitter.svg"
+  },
+  "assets/icons/youtube.svg": {
+    "file": "assets/youtube-mFi5DZXv.svg",
+    "src": "assets/icons/youtube.svg"
+  },
+  "assets/images/compare-left-map.svg": {
+    "file": "assets/compare-left-map-BIkuamcH.svg",
+    "src": "assets/images/compare-left-map.svg"
+  },
+  "assets/images/digital-mask.svg": {
+    "file": "assets/digital-mask-sfCnijoI.svg",
+    "src": "assets/images/digital-mask.svg"
+  },
+  "assets/images/home-compare-countries.svg": {
+    "file": "assets/home-compare-countries-CXBFix-2.svg",
+    "src": "assets/images/home-compare-countries.svg"
+  },
+  "assets/images/map-outline.svg": {
+    "file": "assets/map-outline-DGoNcvfa.svg",
+    "src": "assets/images/map-outline.svg"
+  },
+  "assets/images/map.svg": {
+    "file": "assets/map-BAiPVX5s.svg",
+    "src": "assets/images/map.svg"
+  },
+  "assets/images/statelessness-mask.svg": {
+    "file": "assets/statelessness-mask-CqBpyw5B.svg",
+    "src": "assets/images/statelessness-mask.svg"
+  },
+  "resources/js/admin/admin-seap.js": {
+    "file": "assets/admin-seap-DB4wAtfZ.js",
+    "name": "admin-seap",
+    "src": "resources/js/admin/admin-seap.js",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DWxw5LbC.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/sass/admin.scss": {
+    "file": "assets/admin-CgWIN3_S.css",
+    "src": "resources/sass/admin.scss",
+    "isEntry": true
+  },
+  "resources/sass/main.scss": {
+    "file": "assets/main-BH06s57n.css",
+    "src": "resources/sass/main.scss",
+    "isEntry": true
+  }
+}
